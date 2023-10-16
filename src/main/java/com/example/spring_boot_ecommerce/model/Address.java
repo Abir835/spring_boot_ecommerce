@@ -23,6 +23,19 @@ public class Address {
     private String city;
     private String region;
     private Integer postalCode;
-    private Integer countryId;
+    @OneToOne
+    @JoinColumn(
+            name = "countryId",
+            referencedColumnName = "id"
+    )
+    private Country countryId;
 
+    @ManyToOne(
+            cascade = CascadeType.ALL
+    )
+    @JoinColumn(
+            name = "user_id",
+            referencedColumnName = "id"
+    )
+    private User user;
 }
