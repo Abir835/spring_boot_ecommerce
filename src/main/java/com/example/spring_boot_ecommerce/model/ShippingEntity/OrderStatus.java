@@ -1,10 +1,7 @@
 package com.example.spring_boot_ecommerce.model.ShippingEntity;
 
 import com.example.spring_boot_ecommerce.enums.Role;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -19,5 +16,6 @@ public class OrderStatus {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
+    @Enumerated(EnumType.STRING)
     private Role role;
 }
