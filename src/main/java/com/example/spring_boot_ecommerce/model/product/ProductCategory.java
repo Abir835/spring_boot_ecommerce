@@ -1,4 +1,5 @@
-package com.example.spring_boot_ecommerce.model.productEntity;
+package com.example.spring_boot_ecommerce.model.product;
+
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -13,31 +14,28 @@ import java.util.List;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "VariationOptions")
-public class VariationOption {
+@Table(name = "PRODUCTCATEGORY")
+public class ProductCategory {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id;
-    private String option_value;
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(
-            name = "variationId",
-            referencedColumnName = "id"
+    private Integer Id;
+    private String categoryName;
+    @OneToMany(
+            mappedBy = "category"
     )
-    private Variation variation;
+    private List<Product> products;
 
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(
-            name = "product_configurations",
+            name = "promotion_category",
             joinColumns = @JoinColumn(
-                    name = "variation_option_id",
+                    name = "product_category_id",
                     referencedColumnName = "id"
             ),
             inverseJoinColumns = @JoinColumn(
-                    name = "product_item",
+                    name = "promotion_id",
                     referencedColumnName = "id"
             )
     )
-    private List<ProductItem> productItems;
-
+    private List<Promotion> promotion;
 }

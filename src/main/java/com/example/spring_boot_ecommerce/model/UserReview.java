@@ -1,6 +1,6 @@
 package com.example.spring_boot_ecommerce.model;
 
-import com.example.spring_boot_ecommerce.model.ShippingEntity.OrderLine;
+import com.example.spring_boot_ecommerce.model.Shipping.OrderLine;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;

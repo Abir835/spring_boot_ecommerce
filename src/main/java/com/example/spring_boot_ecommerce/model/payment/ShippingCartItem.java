@@ -1,6 +1,6 @@
-package com.example.spring_boot_ecommerce.model.paymentEntity;
+package com.example.spring_boot_ecommerce.model.payment;
 
-import com.example.spring_boot_ecommerce.model.productEntity.ProductItem;
+import com.example.spring_boot_ecommerce.model.product.ProductItem;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;

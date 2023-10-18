@@ -1,39 +1,34 @@
-package com.example.spring_boot_ecommerce.model.paymentEntity;
+package com.example.spring_boot_ecommerce.model.Shipping;
 
-import com.example.spring_boot_ecommerce.model.User;
+import com.example.spring_boot_ecommerce.model.product.ProductItem;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.Date;
-
 @Entity
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class UserPaymentMethod {
+public class OrderLine {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(
-            name = "user_id",
+            name = "product_item_id",
             referencedColumnName = "id"
     )
-    private User user;
+    private ProductItem productItem;
 
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(
-            name = "payment_type_id",
+            name = "order_id",
             referencedColumnName = "id"
     )
-    private PaymentType paymentType;
-    private String provider;
-    private String accountNumber;
-    private Date expireDate;
-    protected Boolean is_default;
-
+    private ShopOrder shopOrder;
+    private Integer QTY;
+    private Double price;
 }

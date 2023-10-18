@@ -1,4 +1,4 @@
-package com.example.spring_boot_ecommerce.model.paymentEntity;
+package com.example.spring_boot_ecommerce.model.payment;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

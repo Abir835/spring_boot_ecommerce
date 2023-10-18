@@ -1,4 +1,4 @@
-package com.example.spring_boot_ecommerce.model.ShippingEntity;
+package com.example.spring_boot_ecommerce.model.Shipping;
 
 import com.example.spring_boot_ecommerce.enums.Role;
 import jakarta.persistence.*;
